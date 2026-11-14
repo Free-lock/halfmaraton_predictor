@@ -699,7 +699,7 @@ st.markdown(
     """
     <div class="hero">
         <div class="hero-badge">RUNNING × MACHINE LEARNING</div>
-        <h1>🏃 HalfTime Predictor</h1>
+        <h1>🏃 Half Marathon - Time Predictor</h1>
         <p>
             Oszacuj czas na mecie półmaratonu na podstawie międzyczasu po pierwszych 5 km. —
             AI pomoże uzupełnić formularz.
@@ -710,8 +710,8 @@ st.markdown(
 )
 
 st.caption(
-    "Wynik oblicza wytrenowany model regresyjny. "
-    "OpenAI służy wyłącznie do odczytania danych z tekstu."
+    "Wynik oblicza wytrenowany model regresyjny, na dancyh z półmaratonów we Wrocławiu w latach 2023–2024. "
+    "OpenAI służy wyłącznie do odczytania danych z tekstu w formularzu."
 )
 
 
