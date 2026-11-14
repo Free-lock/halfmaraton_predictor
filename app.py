@@ -721,7 +721,7 @@ st.caption(
 
 with st.expander(
     "💬 Uzupełnij formularz na podstawie opisu",
-    expanded=False,
+    expanded=True,
 ):
     user_text = st.text_area(
         "✍️ Opisz swoje dane",
@@ -822,7 +822,7 @@ with st.expander(
 # ============================================================
 
 # UWAGA: poniższe "with" ma ZERO spacji przed sobą.
-with st.expander("📊 Model i jakość predykcji", expanded=True):
+with st.expander("📊 Model i jakość predykcji", expanded=False):
     st.markdown(f"**Model:** {MODEL_DISPLAY_NAME}")
 
     col1, col2 = st.columns(2)
