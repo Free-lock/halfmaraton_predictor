@@ -14,6 +14,9 @@ import streamlit as st
 from dotenv import load_dotenv
 from openai import OpenAI as PlainOpenAI
 from pydantic import BaseModel, Field
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 
@@ -950,8 +953,10 @@ if submitted:
             }
 
     except ValueError as exc:
-        # Komunikaty z parsera czasu są kontrolowane.
-        # Inne szczegóły błędów modelu pokazujemy ogólnie.
+        logger.exception(
+            "Błąd walidacji lub wyniku predykcji PyCaret."
+        )
+
         if str(exc).startswith(
             (
                 "Podaj czas",
@@ -967,16 +972,23 @@ if submitted:
             )
 
     except FileNotFoundError:
+        logger.exception(
+            "Nie znaleziono pliku wymaganego do predykcji."
+        )
+
         st.error(
-            "Nie znaleziono pliku halfmarathon_model.pkl. "
-            "Dodaj zaufany plik modelu do katalogu aplikacji."
+            "Nie znaleziono pliku wymaganego do uruchomienia modelu. "
+            "Administrator powinien sprawdzić konfigurację aplikacji."
         )
 
     except Exception:
+        logger.exception(
+            "Nieoczekiwany błąd predykcji PyCaret."
+        )
+
         st.error(
             "Wystąpił błąd predykcji. "
-            "Sprawdź model, nazwy cech oraz wersje bibliotek "
-            "użytych podczas treningu i uruchomienia."
+            "Administrator powinien sprawdzić logi aplikacji."
         )
 
 
