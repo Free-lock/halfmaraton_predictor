@@ -1,5 +1,5 @@
 ````markdown
-# 🏃 HalfTime — predyktor czasu półmaratonu
+# 🏃 HalfTime Marathon predictor — predyktor czasu półmaratonu
 
 **Od wyniku na 5 km do szacowanego czasu na mecie półmaratonu.**
 
